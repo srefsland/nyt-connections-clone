@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { delay } from "../_utils";
 
 export default function usePopup() {
   const [popupState, setPopupState] = useState({ show: false, message: "" });
 
-  const showPopup = (message: string) => {
+  const showPopup = async (message: string) => {
     setPopupState({ show: true, message: message });
-    setTimeout(() => setPopupState({ show: false, message: "" }), 2000);
+    await delay(1500).then(() => setPopupState({ show: false, message: "" }));
   };
 
   return [popupState, showPopup] as const;
