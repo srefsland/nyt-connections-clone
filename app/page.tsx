@@ -5,7 +5,7 @@ import Grid from "./_components/game/grid";
 import ControlButton from "./_components/button/control-button";
 import { Category, Word } from "./_types";
 import { categories } from "./_examples";
-import { shuffleArray, getPerfection } from "./_utils";
+import { shuffleArray, getPerfection, delay } from "./_utils";
 import GameWonModal from "./_components/modal/game-won-modal";
 import Popup from "./_components/popup";
 import usePopup from "./_hooks/use-popup";
@@ -84,7 +84,7 @@ export default function Home() {
     handleDeselectAll();
 
     for (const category of remainingCategories) {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await delay(1000);
       setClearedCategories((prevClearedCategories) => [
         ...prevClearedCategories,
         category,
@@ -94,7 +94,7 @@ export default function Home() {
       );
     }
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await delay(1000);
     setIsLost(true);
   };
 

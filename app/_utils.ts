@@ -36,3 +36,7 @@ export const getPerfection = (mistakesRemaining: number) => {
       return "Phew!";
   }
 };
+
+export const delay = (ms: number) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
