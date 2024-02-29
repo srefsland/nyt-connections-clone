@@ -1,15 +1,15 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import Grid from "./_components/game/grid";
+import { useEffect, useRef, useState } from "react";
 import ControlButton from "./_components/button/control-button";
-import { Category, Word } from "./_types";
-import { categories } from "./_examples";
-import { shuffleArray, getPerfection, delay } from "./_utils";
+import Grid from "./_components/game/grid";
+import GameLostModal from "./_components/modal/game-lost-modal";
 import GameWonModal from "./_components/modal/game-won-modal";
 import Popup from "./_components/popup";
+import { categories } from "./_examples";
 import usePopup from "./_hooks/use-popup";
-import GameLostModal from "./_components/modal/game-lost-modal";
+import { Category, Word } from "./_types";
+import { delay, getPerfection, shuffleArray } from "./_utils";
 
 export default function Home() {
   const [gameWords, setGameWords] = useState<Word[]>([]);
@@ -19,7 +19,6 @@ export default function Home() {
   const [isLost, setIsLost] = useState(false);
   const [mistakesRemaining, setMistakesRemaning] = useState(4);
   const [popupState, showPopup] = usePopup();
-
   const guessHistoryRef = useRef<Word[][]>([]);
 
   useEffect(() => {

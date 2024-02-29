@@ -1,7 +1,7 @@
 import { Word } from "@/app/_types";
-import GameModal from "./game-modal";
-import GuessHistory from "../guess-history";
 import ControlButton from "../button/control-button";
+import GuessHistory from "../guess-history";
+import GameModal from "./game-modal";
 
 type GameLostModalProps = {
   isOpen: boolean;

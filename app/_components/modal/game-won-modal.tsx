@@ -1,8 +1,7 @@
-import GameModal from "./game-modal";
-import ControlButton from "../button/control-button";
 import { Word } from "@/app/_types";
-import { getWordColor } from "@/app/_utils";
+import ControlButton from "../button/control-button";
 import GuessHistory from "../guess-history";
+import GameModal from "./game-modal";
 
 type GameWonModalProps = {
   isOpen: boolean;
