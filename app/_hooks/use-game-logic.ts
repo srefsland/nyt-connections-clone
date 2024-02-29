@@ -95,10 +95,10 @@ export default function useGameLogic() {
   const getIncorrectResult = (maxLikeness: number): SubmitResult => {
     setMistakesRemaning(mistakesRemaining - 1);
 
-    if (maxLikeness === 3) {
-      return { result: "one-away" };
-    } else if (mistakesRemaining === 1) {
+    if (mistakesRemaining === 1) {
       return { result: "loss" };
+    } else if (maxLikeness === 3) {
+      return { result: "one-away" };
     } else {
       return { result: "incorrect" };
     }
