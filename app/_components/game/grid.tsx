@@ -4,7 +4,6 @@ import ClearedCategory from "./cleared-category";
 
 type GridProps = {
   words: Word[];
-  selectedWords: Word[];
   clearedCategories: Category[];
   onClick: (word: Word) => void;
 };
@@ -20,7 +19,6 @@ export default function Grid(props: GridProps) {
           key={item.word}
           cellValue={item}
           onClick={props.onClick}
-          isClicked={props.selectedWords.includes(item)}
         />
       ))}
     </div>

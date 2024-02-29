@@ -19,7 +19,7 @@ export default function Home() {
     clearedCategories,
     mistakesRemaining,
     guessHistoryRef,
-    addWord,
+    selectWord,
     shuffleWords,
     deselectAllWords,
     getSubmitResult,
@@ -55,9 +55,9 @@ export default function Home() {
 
   const onClickCell = useCallback(
     (word: Word) => {
-      addWord(word);
+      selectWord(word);
     },
-    [addWord]
+    [selectWord]
   );
 
   return (
@@ -70,7 +70,6 @@ export default function Home() {
           <Popup show={popupState.show} message={popupState.message} />
           <Grid
             words={gameWords}
-            selectedWords={selectedWords}
             onClick={onClickCell}
             clearedCategories={clearedCategories}
           />

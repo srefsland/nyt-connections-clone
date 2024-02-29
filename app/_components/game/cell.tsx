@@ -5,12 +5,11 @@ import { Word } from "@/app/_types";
 type CellProps = {
   cellValue: Word;
   onClick: (word: Word) => void;
-  isClicked: boolean;
 };
 
 export default function Cell(props: CellProps) {
-  const bgColor = props.isClicked ? "bg-stone-500" : "bg-stone-200";
-  const textColor = props.isClicked ? "text-stone-100" : "text-black";
+  const bgColor = props.cellValue.selected ? "bg-stone-500" : "bg-stone-200";
+  const textColor = props.cellValue.selected ? "text-stone-100" : "text-black";
 
   const handleClick = () => {
     props.onClick(props.cellValue);

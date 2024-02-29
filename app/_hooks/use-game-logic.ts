@@ -1,11 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { categories } from "../_examples";
 import { Category, SubmitResult, Word } from "../_types";
 import { delay, shuffleArray } from "../_utils";
 
 export default function useGameLogic() {
   const [gameWords, setGameWords] = useState<Word[]>([]);
-  const [selectedWords, setSelectedWords] = useState<Word[]>([]);
+  const selectedWords = useMemo(
+    () => gameWords.filter((item) => item.selected),
+    [gameWords]
+  );
   const [clearedCategories, setClearedCategories] = useState<Category[]>([]);
   const [isWon, setIsWon] = useState(false);
   const [isLost, setIsLost] = useState(false);
@@ -21,14 +24,20 @@ export default function useGameLogic() {
     setGameWords(shuffleArray(words));
   }, []);
 
-  const addWord = (word: Word): void => {
-    if (selectedWords.includes(word)) {
-      setSelectedWords(selectedWords.filter((item) => item.word !== word.word));
-    } else {
-      if (selectedWords.length !== 4) {
-        setSelectedWords([...selectedWords, word]);
+  const selectWord = (word: Word): void => {
+    const newGameWords = gameWords.map((item) => {
+      // Only allow word to be selected if there are less than 4 selected words
+      if (word.word === item.word) {
+        return {
+          ...item,
+          selected: selectedWords.length < 4 ? !item.selected : false,
+        };
+      } else {
+        return item;
       }
-    }
+    });
+
+    setGameWords(newGameWords);
   };
 
   const shuffleWords = () => {
@@ -36,17 +45,17 @@ export default function useGameLogic() {
   };
 
   const deselectAllWords = () => {
-    setSelectedWords([]);
+    setGameWords(
+      gameWords.map((item) => {
+        return { ...item, selected: false };
+      })
+    );
   };
 
   const getSubmitResult = (): SubmitResult => {
     const sameGuess = guessHistoryRef.current.some((guess) =>
       guess.every((word) => selectedWords.includes(word))
     );
-
-    console.log(sameGuess);
-    console.log(guessHistoryRef.current);
-    console.log(selectedWords);
 
     if (sameGuess) {
       console.log("Same!");
@@ -75,7 +84,6 @@ export default function useGameLogic() {
     setGameWords(
       gameWords.filter((item) => !category.items.includes(item.word))
     );
-    setSelectedWords([]);
 
     if (clearedCategories.length === 3) {
       return { result: "win" };
@@ -129,7 +137,7 @@ export default function useGameLogic() {
     clearedCategories,
     mistakesRemaining,
     guessHistoryRef,
-    addWord,
+    selectWord,
     shuffleWords,
     deselectAllWords,
     getSubmitResult,
