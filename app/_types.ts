@@ -8,3 +8,15 @@ export type Word = {
   word: string;
   level: 1 | 2 | 3 | 4;
 };
+
+export type SubmitResultType =
+  | "correct"
+  | "incorrect"
+  | "same"
+  | "one-away"
+  | "loss"
+  | "win";
+
+export type SubmitResult = {
+  result: SubmitResultType;
+};
