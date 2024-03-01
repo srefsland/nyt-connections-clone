@@ -39,9 +39,9 @@ export default function Home() {
   } = useAnimation();
 
   const handleSubmit = async () => {
-    const result: SubmitResult = getSubmitResult();
-
     await animateGuess(selectedWords);
+
+    const result: SubmitResult = getSubmitResult();
 
     switch (result.result) {
       case "same":
