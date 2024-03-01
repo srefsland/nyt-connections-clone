@@ -21,3 +21,8 @@ export type SubmitResultType =
 export type SubmitResult = {
   result: SubmitResultType;
 };
+
+export type CellAnimationState = {
+  show: boolean;
+  index: number;
+};

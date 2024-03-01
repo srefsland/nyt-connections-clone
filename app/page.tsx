@@ -8,8 +8,9 @@ import GameWonModal from "./_components/modal/game-won-modal";
 import Popup from "./_components/popup";
 import useGameLogic from "./_hooks/use-game-logic";
 import usePopup from "./_hooks/use-popup";
-import { SubmitResult, Word } from "./_types";
-import { getPerfection } from "./_utils";
+import { CellAnimationState, SubmitResult, Word } from "./_types";
+import { delay, getPerfection } from "./_utils";
+import useAnimation from "./_hooks/use-animation";
 
 export default function Home() {
   const [popupState, showPopup] = usePopup();
@@ -30,14 +31,24 @@ export default function Home() {
   const [showGameWonModal, setShowGameWonModal] = useState(false);
   const [showGameLostModal, setShowGameLostModal] = useState(false);
 
+  const {
+    guessAnimationState,
+    wrongGuessAnimationState,
+    animateGuess,
+    animateWrongGuess,
+  } = useAnimation();
+
   const handleSubmit = async () => {
     const result: SubmitResult = getSubmitResult();
+
+    await animateGuess(selectedWords);
 
     switch (result.result) {
       case "same":
         showPopup("You've already guessed that!");
         break;
       case "one-away":
+        animateWrongGuess();
         showPopup("One away...");
         break;
       case "loss":
@@ -49,6 +60,9 @@ export default function Home() {
         showPopup(getPerfection(mistakesRemaining));
         await handleWin();
         setShowGameWonModal(true);
+        break;
+      case "incorrect":
+        animateWrongGuess();
         break;
     }
   };
@@ -70,8 +84,11 @@ export default function Home() {
           <Popup show={popupState.show} message={popupState.message} />
           <Grid
             words={gameWords}
+            selectedWords={selectedWords}
             onClick={onClickCell}
             clearedCategories={clearedCategories}
+            guessAnimationState={guessAnimationState}
+            wrongGuessAnimationState={wrongGuessAnimationState}
           />
         </div>
         <h2 className="text-black my-4 md:my-8 mx-8">

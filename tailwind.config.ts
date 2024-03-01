@@ -13,6 +13,22 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: {
+        "horizontal-shake": {
+          "0%, 50%, 100%": {
+            transform: "translateX(0)",
+          },
+          "25%": {
+            transform: "translateX(-5px)",
+          },
+          "75%": {
+            transform: "translateX(5px)",
+          },
+        },
+      },
+      animation: {
+        "horizontal-shake": "horizontal-shake 0.2s ease-in-out infinite",
+      },
     },
   },
   plugins: [],
