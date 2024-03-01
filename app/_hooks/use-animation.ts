@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { useState } from "react";
 import { CellAnimationState, Word } from "../_types";
 import { delay } from "../_utils";
 
@@ -25,7 +25,7 @@ export default function useAnimation() {
 
   const animateWrongGuess = async () => {
     setWrongGuessAnimationState(true);
-    await delay(250);
+    await delay(225);
     setWrongGuessAnimationState(false);
   };
 

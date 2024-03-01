@@ -6,11 +6,11 @@ import Grid from "./_components/game/grid";
 import GameLostModal from "./_components/modal/game-lost-modal";
 import GameWonModal from "./_components/modal/game-won-modal";
 import Popup from "./_components/popup";
+import useAnimation from "./_hooks/use-animation";
 import useGameLogic from "./_hooks/use-game-logic";
 import usePopup from "./_hooks/use-popup";
-import { CellAnimationState, SubmitResult, Word } from "./_types";
-import { delay, getPerfection } from "./_utils";
-import useAnimation from "./_hooks/use-animation";
+import { SubmitResult, Word } from "./_types";
+import { getPerfection } from "./_utils";
 
 export default function Home() {
   const [popupState, showPopup] = usePopup();
