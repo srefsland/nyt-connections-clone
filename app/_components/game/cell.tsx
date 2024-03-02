@@ -10,7 +10,7 @@ type CellProps = {
 };
 
 export default function Cell(props: CellProps) {
-  const bgColor = props.cellValue.selected ? "bg-stone-500" : "bg-stone-200";
+  const bgColor = props.cellValue.selected ? "bg-slate-500" : "bg-slate-200";
   const textColor = props.cellValue.selected ? "text-stone-100" : "text-black";
 
   const handleClick = () => {
