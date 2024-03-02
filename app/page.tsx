@@ -30,6 +30,7 @@ export default function Home() {
 
   const [showGameWonModal, setShowGameWonModal] = useState(false);
   const [showGameLostModal, setShowGameLostModal] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const {
     guessAnimationState,
@@ -39,6 +40,7 @@ export default function Home() {
   } = useAnimation();
 
   const handleSubmit = async () => {
+    setSubmitted(true);
     await animateGuess(selectedWords);
 
     const result: SubmitResult = getSubmitResult();
@@ -65,6 +67,7 @@ export default function Home() {
         animateWrongGuess();
         break;
     }
+    setSubmitted(false);
   };
 
   const onClickCell = useCallback(
@@ -98,12 +101,20 @@ export default function Home() {
           {mistakesRemaining > 0 ? Array(mistakesRemaining).fill("•") : ""}
         </h2>
         <div className="flex gap-2 mb-12">
-          <ControlButton text="Shuffle" onClick={shuffleWords} />
-          <ControlButton text="Deselect All" onClick={deselectAllWords} />
+          <ControlButton
+            text="Shuffle"
+            onClick={shuffleWords}
+            unclickable={submitted}
+          />
+          <ControlButton
+            text="Deselect All"
+            onClick={deselectAllWords}
+            unclickable={selectedWords.length === 0 || submitted}
+          />
           <ControlButton
             text="Submit"
-            unclickable={selectedWords.length !== 4}
-            onClick={() => handleSubmit()}
+            unclickable={selectedWords.length !== 4 || submitted}
+            onClick={handleSubmit}
           />
         </div>
       </div>
