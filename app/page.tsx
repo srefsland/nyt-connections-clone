@@ -120,13 +120,13 @@ export default function Home() {
       </div>
       <GameWonModal
         isOpen={showGameWonModal}
-        onClick={() => setShowGameWonModal(false)}
+        onClose={() => setShowGameWonModal(false)}
         guessHistory={guessHistoryRef.current}
         perfection={getPerfection(mistakesRemaining)}
       />
       <GameLostModal
         isOpen={showGameLostModal}
-        onClick={() => setShowGameLostModal(false)}
+        onClose={() => setShowGameLostModal(false)}
         guessHistory={guessHistoryRef.current}
       />
     </>
