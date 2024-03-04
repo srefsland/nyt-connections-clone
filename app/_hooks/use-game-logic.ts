@@ -136,6 +136,8 @@ export default function useGameLogic() {
     selectedWords,
     clearedCategories,
     mistakesRemaining,
+    isWon,
+    isLost,
     guessHistoryRef,
     selectWord,
     shuffleWords,

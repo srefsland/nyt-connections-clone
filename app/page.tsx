@@ -19,6 +19,8 @@ export default function Home() {
     selectedWords,
     clearedCategories,
     mistakesRemaining,
+    isWon,
+    isLost,
     guessHistoryRef,
     selectWord,
     shuffleWords,
@@ -77,6 +79,54 @@ export default function Home() {
     [selectWord]
   );
 
+  const renderControlButtons = () => {
+    const showResultsWonButton = (
+      <ControlButton
+        text="Show Results"
+        onClick={() => {
+          setShowGameWonModal(true);
+        }}
+      />
+    );
+
+    const showResultsLostButton = (
+      <ControlButton
+        text="Show Results"
+        onClick={() => {
+          setShowGameLostModal(true);
+        }}
+      />
+    );
+
+    const inProgressButtons = (
+      <div className="flex gap-2 mb-12">
+        <ControlButton
+          text="Shuffle"
+          onClick={shuffleWords}
+          unclickable={submitted}
+        />
+        <ControlButton
+          text="Deselect All"
+          onClick={deselectAllWords}
+          unclickable={selectedWords.length === 0 || submitted}
+        />
+        <ControlButton
+          text="Submit"
+          unclickable={selectedWords.length !== 4 || submitted}
+          onClick={handleSubmit}
+        />
+      </div>
+    );
+
+    if (isWon) {
+      return showResultsWonButton;
+    } else if (isLost) {
+      return showResultsLostButton;
+    } else {
+      return inProgressButtons;
+    }
+  };
+
   return (
     <>
       <div className="flex flex-col items-center w-11/12 md:w-3/4 lg:w-5/12 mx-auto mt-14">
@@ -100,23 +150,7 @@ export default function Home() {
           Mistakes Remaining:{" "}
           {mistakesRemaining > 0 ? Array(mistakesRemaining).fill("•") : ""}
         </h2>
-        <div className="flex gap-2 mb-12">
-          <ControlButton
-            text="Shuffle"
-            onClick={shuffleWords}
-            unclickable={submitted}
-          />
-          <ControlButton
-            text="Deselect All"
-            onClick={deselectAllWords}
-            unclickable={selectedWords.length === 0 || submitted}
-          />
-          <ControlButton
-            text="Submit"
-            unclickable={selectedWords.length !== 4 || submitted}
-            onClick={handleSubmit}
-          />
-        </div>
+        {renderControlButtons()}
       </div>
       <GameWonModal
         isOpen={showGameWonModal}
