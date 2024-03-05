@@ -1,12 +1,13 @@
 export const shuffleArray = <T>(array: T[]): T[] => {
+  const shuffledArray = [...array];
   for (let i = array.length - 1; i > 0; i--) {
     // Generate a random index from 0 to i
     const j = Math.floor(Math.random() * (i + 1));
     // Swap elements array[i] and array[j]
-    [array[i], array[j]] = [array[j], array[i]];
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
   }
 
-  return array;
+  return shuffledArray;
 };
 
 export const getWordColor = (category: 1 | 2 | 3 | 4): string => {
