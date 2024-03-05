@@ -6,7 +6,8 @@ export default function usePopup() {
 
   const showPopup = async (message: string) => {
     setPopupState({ show: true, message: message });
-    await delay(1500).then(() => setPopupState({ show: false, message: "" }));
+    await delay(1500);
+    setPopupState({ show: false, message: "" });
   };
 
   return [popupState, showPopup] as const;
