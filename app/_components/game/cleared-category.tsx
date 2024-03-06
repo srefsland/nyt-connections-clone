@@ -11,10 +11,10 @@ export default function ClearedCategory(props: { category: Category }) {
     <div
       className={`flex flex-col items-center col-span-4 py-4 rounded-md ${bgColor}`}
     >
-      <h1 className="text-black font-bold text-lg">
+      <h1 className="text-black font-bold text-md md:text-lg">
         {props.category.category}
       </h1>
-      <h2 className="text-black text-md">{concatItems}</h2>
+      <h2 className="text-black text-sm md:text-md text-center mx-2">{concatItems}</h2>
     </div>
   );
 }
