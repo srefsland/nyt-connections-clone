@@ -16,7 +16,6 @@ export default function useGameLogic() {
   const guessHistoryRef = useRef<Word[][]>([]);
 
   const puzzleIndex : number = +(localStorage.getItem("puzzleIndex") || "")
-
   const selectedCategories : Category[] = categoriesList[puzzleIndex]
 
   useEffect(() => {

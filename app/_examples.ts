@@ -43,4 +43,25 @@ export const categoriesList: Category[][] = [[
     items: ["5", "14", "42", "132"],
     level: 4,
   },
+],[
+  {
+    category: "SQUARE NUMBERS",
+    items: ["100", "10000", "4", "1"],
+    level: 1,
+  },
+  {
+    category: "PRIME NUMBERS",
+    items: ["11", "31", "41", "5"],
+    level: 2,
+  },
+  {
+    category: "DIGITS SUM TO 3",
+    items: ["21", "30", "12", "3"],
+    level: 3,
+  },
+  {
+    category: "MULTIPLES OF 6",
+    items: ["25", "10", "125", "625"],
+    level: 4,
+  },
 ]];

@@ -9,6 +9,7 @@ import Popup from "./_components/popup";
 import useAnimation from "./_hooks/use-animation";
 import useGameLogic from "./_hooks/use-game-logic";
 import usePopup from "./_hooks/use-popup";
+import { categoriesList } from "./_examples";
 import { SubmitResult, Word } from "./_types";
 import { getPerfection } from "./_utils";
 
@@ -74,7 +75,7 @@ export default function Home() {
 
   const handleChangePuzzle = async () => {
     const oldPuzzleNumber : number = + (localStorage.getItem("puzzleIndex") || "")
-    const newPuzzleNumber : number = (oldPuzzleNumber + 1) % 2
+    const newPuzzleNumber : number = (oldPuzzleNumber + 1) % (categoriesList.length)
     localStorage.setItem("puzzleIndex", newPuzzleNumber.toString())
     window.location.reload();
   }
