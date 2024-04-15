@@ -15,7 +15,9 @@ export default function useGameLogic() {
   const [mistakesRemaining, setMistakesRemaning] = useState(4);
   const guessHistoryRef = useRef<Word[][]>([]);
 
-  const selectedCategories : Category[] = categoriesList[+(localStorage.getItem("puzzleIndex") || "")]
+  const puzzleIndex : number = +(localStorage.getItem("puzzleIndex") || "")
+
+  const selectedCategories : Category[] = categoriesList[puzzleIndex]
 
   useEffect(() => {
     const words: Word[] = selectedCategories
