@@ -2,14 +2,13 @@ import { Category } from "./_types";
 
 export const categories: Category[] = [
   {
-    category: 'SQUARE NUMBERS',
+    category: "SQUARE NUMBERS",
     items: ["1", "4", "9", "16"],
     level: 1,
   },
   {
     category: "DIVISIBLE BY 2 BUT NOT DIVISIBLE BY 3",
-    items: ["2", "8", "10", "14"]
-    ,
+    items: ["2", "8", "10", "14"],
     level: 2,
   },
   {

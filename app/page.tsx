@@ -72,6 +72,10 @@ export default function Home() {
     setSubmitted(false);
   };
 
+  const handleChangePuzzle = async () => {
+    
+  }
+
   const onClickCell = useCallback(
     (word: Word) => {
       selectWord(word);
@@ -115,6 +119,11 @@ export default function Home() {
           unclickable={selectedWords.length !== 4 || submitted}
           onClick={handleSubmit}
         />
+        <ControlButton
+          text="Change Puzzle"
+          unclickable={false}
+          onClick={handleChangePuzzle}
+        />
       </div>
     );
 
@@ -131,7 +140,7 @@ export default function Home() {
     <>
       <div className="flex flex-col items-center w-11/12 md:w-3/4 lg:w-7/12 mx-auto mt-14">
         <h1 className="text-black text-4xl font-semibold my-4 ml-4">
-          Connections
+          Number Connections
         </h1>
         <hr className="mb-4 md:mb-4 w-full"></hr>
         <h1 className="text-black mb-4">Create four groups of four numbers!</h1>
