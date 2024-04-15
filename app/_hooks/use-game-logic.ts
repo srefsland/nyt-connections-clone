@@ -53,8 +53,6 @@ export default function useGameLogic() {
   };
 
   const getSubmitResult = (): SubmitResult => {
-    console.log("guessHistoryRef.current", guessHistoryRef.current)
-    console.log("selectedWords", selectedWords)
     const sameGuess = guessHistoryRef.current.some((guess) =>
       guess.every((word) => selectedWords.some((selectedWord) => 
         selectedWord.word === word.word
@@ -62,7 +60,6 @@ export default function useGameLogic() {
     );
 
     if (sameGuess) {
-      console.log("Same!");
       return { result: "same" };
     }
 
