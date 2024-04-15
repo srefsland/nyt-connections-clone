@@ -1,6 +1,6 @@
 import { Category } from "./_types";
 
-export const categories: Category[] = [
+export const categories: Category[][] = [[
   {
     category: "SQUARE NUMBERS",
     items: ["1", "4", "9", "16"],
@@ -21,29 +21,26 @@ export const categories: Category[] = [
     items: ["5", "7", "11", "13"],
     level: 4,
   },
-];
-
-/* BASE EXAMPLE
-export const categories: Category[] = [
+],
+[
   {
-    category: 'ENCOURAGE, WITH "ON"',
-    items: ["EGG", "GOAD", "SPUR", "URGE"],
+    category: "SQUARE NUMBERS",
+    items: ["36", "49", "64", "81"],
     level: 1,
   },
   {
-    category: "SPHERICAL FOODS",
-    items: ["JAWBREAKER", "MEATBALL", "MOZZARELLA", "ORANGE"],
+    category: "PRIME NUMBERS",
+    items: ["2", "8", "10", "14"],
     level: 2,
   },
   {
-    category: "GROCERY STORE AISLES",
-    items: ["DAIRY", "FROZEN", "PRODUCE", "SNACK"],
+    category: "FIBONACCI NUMBERS",
+    items: ["34", "55", "89", "144"],
     level: 3,
   },
   {
-    category: "GO ___",
-    items: ["BANANAS", "FIGURE", "FISH", "STEADY"],
+    category: "CATALAN NUMBERS",
+    items: ["5", "14", "42", "132"],
     level: 4,
   },
-];
-*/
+]];

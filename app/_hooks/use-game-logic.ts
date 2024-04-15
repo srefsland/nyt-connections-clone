@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { categories } from "../_examples2";
+import { categories } from "../_examples";
 import { Category, SubmitResult, Word } from "../_types";
 import { delay, shuffleArray } from "../_utils";
 
@@ -15,8 +15,10 @@ export default function useGameLogic() {
   const [mistakesRemaining, setMistakesRemaning] = useState(4);
   const guessHistoryRef = useRef<Word[][]>([]);
 
+  const selectedCategories : Category[] = categories[+(localStorage.getItem("puzzleIndex") || "")]
+
   useEffect(() => {
-    const words: Word[] = categories
+    const words: Word[] = selectedCategories
       .map((category) =>
         category.items.map((word) => ({ word: word, level: category.level }))
       )
@@ -65,7 +67,7 @@ export default function useGameLogic() {
 
     guessHistoryRef.current.push(selectedWords);
 
-    const likenessCounts = categories.map((category) => {
+    const likenessCounts = selectedCategories.map((category) => {
       return selectedWords.filter((item) => category.items.includes(item.word))
         .length;
     });
@@ -74,7 +76,7 @@ export default function useGameLogic() {
     const maxIndex = likenessCounts.indexOf(maxLikeness);
 
     if (maxLikeness === 4) {
-      return getCorrectResult(categories[maxIndex]);
+      return getCorrectResult(selectedCategories[maxIndex]);
     } else {
       return getIncorrectResult(maxLikeness);
     }
@@ -106,7 +108,7 @@ export default function useGameLogic() {
   };
 
   const handleLoss = async () => {
-    const remainingCategories = categories.filter(
+    const remainingCategories = selectedCategories.filter(
       (category) => !clearedCategories.includes(category)
     );
 

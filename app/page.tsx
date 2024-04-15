@@ -73,7 +73,10 @@ export default function Home() {
   };
 
   const handleChangePuzzle = async () => {
-    
+    const oldPuzzleNumber : number = + (localStorage.getItem("puzzleIndex") || "")
+    const newPuzzleNumber : number = (oldPuzzleNumber + 1) % 2
+    localStorage.setItem("puzzleIndex", newPuzzleNumber.toString())
+    window.location.reload();
   }
 
   const onClickCell = useCallback(
