@@ -3,7 +3,7 @@ import { Category } from "./_types";
 export const categories: Category[] = [
   {
     category: 'SQUARE NUMBERS',
-    items: ["1", "4", "9", "16"],
+    items: ["1089", "4", "9", "16"],
     level: 1,
   },
   {
