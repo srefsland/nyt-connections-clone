@@ -1,17 +1,17 @@
-# NYT Connections Clone
+# Number Connections
 
-Clone of the Connections game from the New York Times, written using Next.js.
+Clone of the Connections game from the New York Times but with numbers instead of words, written using Next.js.
 
 ## Installing locally
 
 For those interested in running the app locally, first clone the repository:
 ```bash
-git clone https://github.com/srefsland/nyt-connections-clone.git
+git clone https://github.com/Moonflower2022/number-connections
 ```
 
 Install dependencies:
 ```bash
-cd nyt-connections-clone
+cd number-connections
 npm install
 ```
 
@@ -20,7 +20,7 @@ Start the development server:
 npm run dev
 ```
 
-The development server is now live at http://localhost:3000.
+The development server will then be live at http://localhost:3000.
 
 ## License
 
