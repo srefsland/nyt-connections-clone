@@ -134,7 +134,7 @@ export default function Home() {
           Connections
         </h1>
         <hr className="mb-4 md:mb-4 w-full"></hr>
-        <h1 className="text-black mb-4">Create four groups of four!</h1>
+        <h1 className="text-black mb-4">Create four groups of four numbers!</h1>
         <div className="relative w-full">
           <Popup show={popupState.show} message={popupState.message} />
           <Grid
