@@ -8,7 +8,7 @@ export const categories: Category[] = [
   },
   {
     category: "PRIME NUMBERS",
-    items: ["2", "8", "10", "14"],
+    items: ["41", "43","47","53"],
     level: 2,
   },
   {
