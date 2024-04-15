@@ -1,6 +1,6 @@
 # Number Connections
 
-Clone of the Connections game from the New York Times but with numbers instead of words, written using Next.js.
+The Connections game from the New York Times but with numbers instead of words, written using Next.js.
 
 ## Installing locally
 
