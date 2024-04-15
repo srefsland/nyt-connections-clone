@@ -1,6 +1,6 @@
 import { Category } from "./_types";
 
-export const categories: Category[][] = [[
+export const categoriesList: Category[][] = [[
   {
     category: "SQUARE NUMBERS",
     items: ["1", "4", "9", "16"],

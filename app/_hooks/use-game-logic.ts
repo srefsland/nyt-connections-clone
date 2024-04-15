@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { categories } from "../_examples";
+import { categoriesList } from "../_examples";
 import { Category, SubmitResult, Word } from "../_types";
 import { delay, shuffleArray } from "../_utils";
 
@@ -15,7 +15,7 @@ export default function useGameLogic() {
   const [mistakesRemaining, setMistakesRemaning] = useState(4);
   const guessHistoryRef = useRef<Word[][]>([]);
 
-  const selectedCategories : Category[] = categories[+(localStorage.getItem("puzzleIndex") || "")]
+  const selectedCategories : Category[] = categoriesList[+(localStorage.getItem("puzzleIndex") || "")]
 
   useEffect(() => {
     const words: Word[] = selectedCategories
