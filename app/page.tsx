@@ -74,7 +74,10 @@ export default function Home() {
   };
 
   const handleChangePuzzle = async () => {
-    const oldPuzzleNumber : number = + (localStorage.getItem("puzzleIndex") || "")
+    var oldPuzzleNumber : number = 0; 
+    if (typeof window !== "undefined") {
+      oldPuzzleNumber = + (localStorage.getItem("puzzleIndex") || "")
+    }
     const newPuzzleNumber : number = (oldPuzzleNumber + 1) % (categoriesList.length)
     localStorage.setItem("puzzleIndex", newPuzzleNumber.toString())
     window.location.reload();

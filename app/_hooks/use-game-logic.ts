@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useMemo, useRef, useState } from "react";
 import { categoriesList } from "../_examples";
 import { Category, SubmitResult, Word } from "../_types";
@@ -15,8 +17,11 @@ export default function useGameLogic() {
   const [mistakesRemaining, setMistakesRemaning] = useState(4);
   const guessHistoryRef = useRef<Word[][]>([]);
 
-  const puzzleIndex : number = +(localStorage.getItem("puzzleIndex") || "")
-  const selectedCategories : Category[] = categoriesList[puzzleIndex]
+  var puzzleIndex : number = 0;
+  if (typeof window !== "undefined") {
+    puzzleIndex = +(localStorage.getItem("puzzleIndex") || "");
+  }
+  const selectedCategories : Category[] = categoriesList[puzzleIndex];
 
   useEffect(() => {
     const words: Word[] = selectedCategories
