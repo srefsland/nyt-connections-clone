@@ -74,7 +74,7 @@ export const categoriesList: Category[][] = [[
   {
     category: "CENTRAL BINOMIAL COEFFICIENTS",
     items: ["20", "70", "252", "924"],
-    level: 2,
+    level: 4,
   },
   {
     category: "LEAST COMMON MULTIPLE OF FIRST N NUMBERS",
@@ -82,10 +82,10 @@ export const categoriesList: Category[][] = [[
     level: 3,
   },
   {
-    category: "ANSWERS TO 2024 AIME I",
-    items: ["104", "110", "321", "371"],
-    level: 4,
-  },
+    category: "FIRST DIGITS OF FAMOUS CONSTANTS",
+    items: ["164", "271", "314", "577"],
+    level: 2,
+  }
 ]
                                             
                                             
