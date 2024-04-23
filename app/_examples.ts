@@ -64,4 +64,29 @@ export const categoriesList: Category[][] = [[
     items: ["25", "10", "125", "625"],
     level: 4,
   },
-]];
+],
+                                             [
+  {
+    category: "NUMBERS READING THE SAME UPSIDE DOWN",
+    items: ["11", "69", "96", "888"],
+    level: 1,
+  },
+  {
+    category: "CENTRAL BINOMIAL COEFFICIENTS",
+    items: ["20", "70", "252", "924"],
+    level: 2,
+  },
+  {
+    category: "LEAST COMMON MULTIPLE OF FIRST N NUMBERS",
+    items: ["12", "60", "420", "840"],
+    level: 3,
+  },
+  {
+    category: "ANSWERS TO 2024 AIME I",
+    items: ["104", "110", "321", "371"],
+    level: 4,
+  },
+]
+                                            
+                                            
+                                            ];
