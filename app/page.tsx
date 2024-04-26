@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect} from "react";
 import ControlButton from "./_components/button/control-button";
 import Grid from "./_components/game/grid";
 import GameLostModal from "./_components/modal/game-lost-modal";
@@ -143,6 +143,16 @@ export default function Home() {
     }
   };
 
+  const [puzzleIndex, setPuzzleIndex] = useState(0);
+
+  useEffect(() => {
+    // Retrieve puzzle index from localStorage when the component mounts
+    if (typeof window !== 'undefined' && window.localStorage) {
+      const storedIndex = parseInt(localStorage.getItem('puzzleIndex') || "");
+      setPuzzleIndex(storedIndex);
+    }
+  }, []);
+
   return (
     <>
       <div className="flex flex-col items-center w-11/12 md:w-3/4 lg:w-7/12 mx-auto mt-14">
@@ -151,6 +161,10 @@ export default function Home() {
         </h1>
         <hr className="mb-4 md:mb-4 w-full"></hr>
         <h1 className="text-black mb-4">Create four groups of four numbers!</h1>
+        <h1 className="text-black mb-4">
+          Puzzle Number: {" "}
+          {puzzleIndex + 1}
+        </h1>
         <div className="relative w-full">
           <Popup show={popupState.show} message={popupState.message} />
           <Grid
