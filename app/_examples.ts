@@ -1,6 +1,29 @@
 import { Category } from "./_types";
 
-export const categoriesList: Category[][] = [ [
+export const categoriesList: Category[][] = [
+  [
+  {
+    category: "PALINDROMES",
+    items: ["7", "11", "434", "797"],
+    level: 1,
+  },
+  {
+    category: "UNLUCKY NUMBERS",
+    items: ["4", "13", "17", "666"],
+    level: 4,
+  },
+  {
+    category: "PLAYER NUMBERS IN SQUID GAME",
+    items: ["1", "67", "218", "456"],
+    level: 3,
+  },
+  {
+    category: "LAST DIGITS OF FAMOUS EXPERIMENTS IN POPPY PLAYTIME",
+    items: ["6", "170", "188", "222"],
+    level: 2,
+  }
+],
+  [
   {
     category: "NUMBERS READING THE SAME UPSIDE DOWN",
     items: ["11", "69", "96", "888"],
