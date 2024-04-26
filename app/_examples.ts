@@ -10,7 +10,7 @@ export const categoriesList: Category[][] = [
   {
     category: "UNLUCKY NUMBERS",
     items: ["4", "13", "17", "666"],
-    level: 4,
+    level: 2,
   },
   {
     category: "PLAYER NUMBERS IN SQUID GAME",
@@ -20,7 +20,7 @@ export const categoriesList: Category[][] = [
   {
     category: "LAST DIGITS OF FAMOUS EXPERIMENTS IN POPPY PLAYTIME",
     items: ["6", "170", "188", "222"],
-    level: 2,
+    level: 4,
   }
 ],
   [
