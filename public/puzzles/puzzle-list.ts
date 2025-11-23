@@ -383,7 +383,7 @@ export const puzzleList: { [id: string]: Category[] } = {
     },
     {
       category: "LOOT FROM SUSPICIOUS SAND",
-      items: ["SNIFFER EGG", "COAL", "ANGLER POTTERY SHERD", "GOLD NUGGET"],
+      items: ["SNIFFER EGG", "COAL", "ANGLER POTTERY SHERD", "WOODEN HOE"],
       level: 3,
     },
     {
