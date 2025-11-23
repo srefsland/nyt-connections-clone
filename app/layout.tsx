@@ -5,6 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://craftconnections.net/'),
   title: "CraftConnections - Daily Minecraft Puzzle",
   description: "Group four things in Minecraft that are related!",
   applicationName: "CraftConnections",
