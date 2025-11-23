@@ -15,7 +15,7 @@ export default function Cell(props: CellProps) {
   const textColor = props.cellValue.selected ? "text-stone-100" : "text-black";
   const hover = props.cellValue.selected ? "" : "sm:hover:bg-slate-300";
   const gifList = ["COMPASS", "PRISMARINE", "SEA LANTERN", "CLOCK", "CALIBRATED SKULK SENSOR", "STONECUTTER", "CRIMSON STEM"]
-  const roundedList = ["CLOUDS"]
+  const roundedList = ["CLOUDS", "THE NETHER"]
   const fileExtension = gifList.includes(props.cellValue.word.toUpperCase()) ? "gif" : "png"
   const imageRounded = roundedList.includes(props.cellValue.word.toUpperCase()) ? "rounded-xl" : ""
 

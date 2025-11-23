@@ -368,6 +368,29 @@ export const puzzleList: { [id: string]: Category[] } = {
       items: ["GRASS BLOCK", "TNT", "HAY BALE", "OAK LEAVES"],
       level: 4,
     }
+  ],
+
+  "017": [
+    {
+      category: "RAW FOOD",
+      items: ["CHICKEN", "COD", "RABBIT", "BEEF"],
+      level: 1,
+    },
+    {
+      category: "FOUND IN OCEAN MONUMENTS",
+      items: ["DARK PRISMARINE", "PRISMARINE", "WET SPONGE", "SEA LANTERN"],
+      level: 2,
+    },
+    {
+      category: "LOOT FROM SUSPICIOUS SAND",
+      items: ["SNIFFER EGG", "COAL", "ANGLER POTTERY SHERD", "GOLD NUGGET"],
+      level: 3,
+    },
+    {
+      category: "THINGS STEVE SAYS IN THE MINECRAFT MOVIE",
+      items: ["FLINT AND STEEL", "THE NETHER", "CHICKEN JOCKEY", "ENDER PEARL"],
+      level: 4,
+    }
   ]
 
 }
