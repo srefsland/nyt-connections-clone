@@ -37,3 +37,8 @@ next-env.d.ts
 
 # vscode
 /.vscode
+
+# Test results
+test-results/
+playwright-report/
+.nyc_output/
