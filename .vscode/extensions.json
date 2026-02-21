@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "ms-playwright.playwright",
+    "orta.vscode-jest",
+    "mikestead.dotenv",
+    "ms-azuretools.vscode-docker",
+    "GitHub.copilot",
+    "GitHub.vscode-pull-request-github",
+    "eamodio.gitlens"
+  ]
+}
